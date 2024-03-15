@@ -1,10 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+
 import MovieGallery from "./MovieGallery";
 
 const MainContainer = function () {
@@ -20,7 +14,8 @@ const MainContainer = function () {
                 className="btn btn-secondary btn-sm dropdown-toggle rounded-0"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style={{ backgroundColor: "#221f1f" }}
+                // style= {{ background-color: "221f1f" }}
+                variant="secondary"
               >
                 Genres
               </button>
