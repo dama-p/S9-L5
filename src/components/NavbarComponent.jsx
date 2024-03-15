@@ -2,13 +2,14 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../assets/logo.png";
 
 const NavbarComponent = function () {
   return (
     <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src="/public/netflix-clone/assets/logo.png" style={{ width: "100px" }} />
+          <img src={logo} alt ="logo" style={{ width: "100px" }} />
         </a>
         <button
           className="navbar-toggler"

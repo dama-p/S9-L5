@@ -1,12 +1,15 @@
-
 import "./App.css";
-import NavbarComponent from "./components/Navbar";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+import NavbarComponent from "./components/NavbarComponent";
+import FooterComponent from "./components/FooterComponent";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
     <div className="App">
       <NavbarComponent />
+      <MainContainer/>
+      <FooterComponent />
     </div>
   );
 }
