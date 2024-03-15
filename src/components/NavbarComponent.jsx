@@ -9,7 +9,7 @@ const NavbarComponent = function () {
     <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={logo} alt ="logo" style={{ width: "100px" }} />
+          <img src={logo} alt="logo" style={{ width: "100px" }} />
         </a>
         <button
           className="navbar-toggler"
