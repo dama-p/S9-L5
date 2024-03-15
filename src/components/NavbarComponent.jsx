@@ -1,6 +1,5 @@
 
 import logo from "../assets/logo.png";
-import ExtraProfile from "./ExtraProfile";
 
 const NavbarComponent = function () {
   return (
