@@ -58,7 +58,7 @@ class MovieGallery extends Component {
           </div>
         )}
 
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mt-2 mb-4 gx-2">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mt-3 mb-4 gx-2">
           {this.state.moviesArray.map((movie, index) => {
             if (index < 6) {
               return (

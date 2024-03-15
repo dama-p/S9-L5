@@ -1,4 +1,4 @@
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import MovieGallery from "./MovieGallery";
 
 const MainContainer = function () {
@@ -14,12 +14,11 @@ const MainContainer = function () {
                 className="btn btn-secondary btn-sm dropdown-toggle rounded-0"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                // style= {{ background-color: "221f1f" }}
                 variant="secondary"
               >
                 Genres
               </button>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu" data-bs-theme="dark">
                 <li>
                   <a className="dropdown-item" href="#">
                     Comedy

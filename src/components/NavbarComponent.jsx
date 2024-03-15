@@ -1,5 +1,6 @@
 
 import logo from "../assets/logo.png";
+import ExtraProfile from "./ExtraProfile";
 
 const NavbarComponent = function () {
   return (
@@ -53,7 +54,7 @@ const NavbarComponent = function () {
               KIDS
             </div>
             <i className="bi bi-bell icons"></i>
-            <i className="bi bi-person-circle icons"></i>
+           
           </div>
         </div>
       </div>
