@@ -1,7 +1,7 @@
 const TVShows = function () {
   return (
     <div>
-      <h1 style={{ color: "white" }}>CIAO!</h1>
+      <h1 style={{ color: "white" }}>Coming soon...</h1>
     </div>
   );
 };
