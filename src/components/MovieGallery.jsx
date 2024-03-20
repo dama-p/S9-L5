@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
+import { Link } from "react-router-dom";
 
 const URL = "http://www.omdbapi.com/?apikey=a5c6b837&s=";
 class MovieGallery extends Component {
@@ -64,7 +65,9 @@ class MovieGallery extends Component {
               return (
                 <div className="col-6 col-md-4 col-lg-2 mb-2 text-center px-1" key={movie.imdbID}>
                   <div className="posterContainer">
+                    <Link to={"/details/" + movie.imdbID}>
                     <img src={movie.Poster} className="img-fluid" alt="movie poster"></img>
+                    </Link>
                   </div>
                 </div>
               );
