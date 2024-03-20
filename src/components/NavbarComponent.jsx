@@ -1,5 +1,5 @@
-
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const NavbarComponent = function () {
   return (
@@ -22,14 +22,14 @@ const NavbarComponent = function () {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active fw-bold" href="#">
+              <Link className="nav-link fw-bold" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-bold" href="#">
-                TV Shows
-              </a>
+              <Link className="nav-link fw-bold" to="/TvShows">
+                Tv Shows
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link fw-bold" href="#">
@@ -53,7 +53,6 @@ const NavbarComponent = function () {
               KIDS
             </div>
             <i className="bi bi-bell icons"></i>
-           
           </div>
         </div>
       </div>
