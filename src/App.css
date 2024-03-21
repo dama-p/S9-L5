@@ -213,3 +213,20 @@ h4 {
   max-width: 300px;
   align-self: center;
 }
+
+#commentsList {
+  background-color: #181a1d;
+  color: #a9a9a9;
+  border: none;
+  text-align: left;
+  margin: 5px;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.commentsTitle {
+  font-size: 2rem;
+  text-align: right;
+  margin: 50px 60px 5px 5px;
+  color: red;
+}

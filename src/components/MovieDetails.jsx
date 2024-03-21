@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
+import ListGroup from "react-bootstrap/ListGroup";
 import { useParams, useNavigate } from "react-router-dom";
 
 const MovieDetails = function () {
   const [movieObject, setMovieObject] = useState(null);
+  const [commentsArray, setCommentsArray] = useState([]);
 
   const params = useParams();
   console.log("PARAMS", params);
@@ -32,12 +34,39 @@ const MovieDetails = function () {
       })
 
       .catch((error) => {
-        console.log("ERRORE", error);
+        console.log("ERROR", error);
+      });
+  };
+
+  const fetchComments = () => {
+    fetch("https://striveschool-api.herokuapp.com/api/comments/" + params.movieId, {
+      method: "GET",
+
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxYTdjNTRjNTllYzAwMTk5MGQ3M2IiLCJpYXQiOjE3MTA3NzIxOTcsImV4cCI6MTcxMTk4MTc5N30.kCohxILxrs-RND89SG7g6s5nmtlkExQuYG7vQHss1nM",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Issues with data fetching");
+        }
+      })
+      .then((comments) => {
+        console.log("COMMENTS ARRAY", comments);
+        console.log(comments[0].comment);
+        setCommentsArray(comments);
+      })
+      .catch((error) => {
+        console.log("ERROR", error);
       });
   };
 
   useEffect(() => {
     fetchMovie();
+    fetchComments();
   }, []);
 
   return (
@@ -58,6 +87,25 @@ const MovieDetails = function () {
             </Card.Body>
           </Card>
         </div>
+      )}
+      {!commentsArray && (
+        <div className="text-center mt-3">
+          <Spinner animation="border" variant="secondary" />
+        </div>
+      )}
+      {commentsArray && (
+        <>
+          <p className="commentsTitle">Comments</p>
+          <ListGroup>
+            {commentsArray.map((comment) => {
+              return (
+                <ListGroup.Item id="commentsList" key={comment._id}>
+                  {comment.comment}
+                </ListGroup.Item>
+              );
+            })}
+          </ListGroup>
+        </>
       )}
     </div>
   );
