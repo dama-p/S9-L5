@@ -76,6 +76,7 @@ const MovieDetails = function () {
           <Spinner animation="border" variant="secondary" />
         </div>
       )}
+
       {movieObject && (
         <div className="mt-3 d-flex flex-column justify-content-center">
           <h2 className="text-center">Details of {movieObject.Title}</h2>
@@ -88,12 +89,14 @@ const MovieDetails = function () {
           </Card>
         </div>
       )}
+
       {!commentsArray && (
         <div className="text-center mt-3">
           <Spinner animation="border" variant="secondary" />
         </div>
       )}
-      {commentsArray && (
+
+      {commentsArray.length != 0 && (
         <>
           <p className="commentsTitle">Comments</p>
           <ListGroup>
@@ -107,6 +110,8 @@ const MovieDetails = function () {
           </ListGroup>
         </>
       )}
+
+      {commentsArray.length === 0 && <p className="commentsTitle text-center m-0">No comments for this movie yet!</p>}
     </div>
   );
 };
